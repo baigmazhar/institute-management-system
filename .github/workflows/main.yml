@@ -35,11 +35,11 @@ jobs:
         mkdir -p ~/.ssh/
         echo "$SSH_PRIVATE_KEY" > ~/.ssh/id_rsa
         chmod 600 ~/.ssh/id_rsa
-        ssh-keyscan 43.205.191.2 >> ~/.ssh/known_hosts
+        ssh-keyscan 13.127.185.155 >> ~/.ssh/known_hosts
 
     - name: Deploy application
       run: |
-        ssh ubuntu@43.205.191.2 'bash -s' < ./deploy_script.sh
+        ssh ubuntu@13.127.185.155 'bash -s' < ./deploy_script.sh
 
     # Optional: Uploads the full dependency graph to GitHub to improve the quality of Dependabot alerts this repository can receive
     - name: Update dependency graph
