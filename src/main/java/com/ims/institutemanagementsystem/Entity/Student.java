@@ -1,24 +1,30 @@
 package com.ims.institutemanagementsystem.Entity;
 
+import jakarta.persistence.*;
 import org.springframework.stereotype.Component;
 
-
+@Entity
 public class Student {
-    String name;
-    int id;
-    int salary;
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
 
-    public Student(String name, int id, int salary) {
+    Integer id;
+    String name;
+
+    Integer salary;
+
+    public Student(){}
+    public Student(String name, Integer id, Integer salary) {
         this.name = name;
         this.id = id;
         this.salary = salary;
     }
 
-    public int getSalary() {
+    public Integer getSalary() {
         return salary;
     }
 
-    public void setSalary(int salary) {
+    public void setSalary(Integer salary) {
         this.salary = salary;
     }
 
@@ -30,11 +36,11 @@ public class Student {
         this.name = name;
     }
 
-    public int getId() {
+    public Integer getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 

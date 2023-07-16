@@ -1,0 +1,1 @@
+java -jar target/institute-management-system-0. 0.1-SNAPSHOT.jar

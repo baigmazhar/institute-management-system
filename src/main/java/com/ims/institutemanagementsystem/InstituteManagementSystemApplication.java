@@ -13,15 +13,15 @@ public class InstituteManagementSystemApplication {
 			public static void main(String[] args) {
 				System.out.println("Hello Java");
 				String str = "Hi Team How are you doing";
-				int maxLength = findMaxLengthWord(str);
+				Integer maxLength = findMaxLengthWord(str);
 				System.out.println("Length of the biggest word: " + maxLength);
 			}
 
-			public static int findMaxLengthWord(String str) {
-				int maxLength = 0;
-				int currentLength = 0;
+			public static Integer findMaxLengthWord(String str) {
+				Integer maxLength = 0;
+				Integer currentLength = 0;
 
-				for (int i = 0; i < str.length(); i++) {
+				for (Integer i = 0; i < str.length(); i++) {
 					char ch = str.charAt(i);
 
 					// Check if the current character is a valid letter

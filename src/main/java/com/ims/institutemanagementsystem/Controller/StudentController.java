@@ -7,6 +7,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Optional;
 
 @RestController
 public class StudentController {
@@ -24,12 +25,22 @@ public class StudentController {
     }
 
     @GetMapping("/getStudent/{studentId}")
-    public ResponseEntity<Student> getStudent(@PathVariable int studentId){
+    public Optional<Student> getStudent(@PathVariable Integer studentId){
     return this.studentService.getStudent(studentId);
     }
 
     @PostMapping("/updateStudent")
-    public ResponseEntity<List<Student>> updateStudent(@RequestBody Student student) {
-        return studentService.updateStudent(student);
+    public void updateStudent(@RequestBody Student student) {
+        studentService.updateStudent(student);
+    }
+
+    @PostMapping("/saveStudent")
+    public ResponseEntity<String> saveStudent(@RequestBody Student student){
+        return studentService.saveStudent(student);
+    }
+
+    @DeleteMapping("/deleteStudent/{id}")
+    public ResponseEntity<String> deleteStudent(@PathVariable Integer id){
+        return studentService.deleteStudent(id);
     }
 }
